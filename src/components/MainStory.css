@@ -1,0 +1,8 @@
+.mainstory {
+    background-image: url('../assets/images/mainimage.jpg');
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter:grayscale(0.5)
+    
+   }
