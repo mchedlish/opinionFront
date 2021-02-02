@@ -1,12 +1,17 @@
-
+.menubar {
+  z-index: 100;
+}
 .logo {
   display: inline-block;
   width: 30%;
   margin-left: 40px;
+  
   }
 .logo img{
   width: 180px;
   margin-top: -7px;
+  
+  
 }
 .listitems {
   display: inline-block;

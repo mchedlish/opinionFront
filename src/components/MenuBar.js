@@ -6,15 +6,16 @@ import Twitter from '../assets/icons/twitter.png'
 import Magnify from '../assets/icons/magnify.png'
 import {Link} from 'react-router-dom'
 
-const MenuBar = () => {
+const MenuBar = (props) => {
+
     return (
         <div className="menubar">
        <Link to='/'> <div className='logo'><img src={Logo}/></div></Link>
         <ul className='listitems'>
         <li><Link><img src={Facebook}/></Link></li>
         <li><Link><img src={Twitter}/></Link></li>
-        <Link className="search"><li><img src={Magnify}/><span>ძებნა</span></li></Link>
-        <Link className="menu"><li>მენიუ</li></Link>
+        <Link className="search" onClick={props.searchvisibility}><li><img src={Magnify}  /><span>ძებნა</span></li></Link>
+        <Link className="menu" onClick={props.visibility} ><li>მენიუ</li></Link>
         
         </ul>
            
