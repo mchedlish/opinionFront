@@ -1,9 +1,52 @@
 .searchpage {
     margin-top: -100vh;
     height: 100vh;
-    z-index: -3;
+    z-index: -1;
     background-color: white;
     position: relative;
     transition: 1s;
     
      }
+
+    .searchInput {
+        position: relative;
+        margin: auto;
+        margin-top: 250px;
+        width: 70%;
+       display: flex;
+       justify-content: space-between;
+       
+        
+    }
+    .input {
+        border:none;
+        color: #b1afaf;
+
+        font-size: 36px;
+        font-family: 'bpg_nino';
+        width: 100%;
+    }
+    .cross {
+        display: inline-block;
+        position: relative;
+        font-size: 34px;
+        
+        
+}
+
+.cross a {
+    color: #1c1c1c;
+    text-decoration: none;
+}
+
+    .form {
+        display: inline-block;
+        
+    }
+    .line {
+        display: block;
+        width: 70%;
+        margin: auto;
+        margin-top: -280px;
+        border-bottom: solid #1c1c1c 1px;
+    }

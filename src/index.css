@@ -15,3 +15,7 @@
   font-family: 'bpg_arial_caps';
   src:url('/src/assets/fonts/bpg-arial-caps-webfont.ttf')
 }
+@font-face {
+  font-family: 'bpg_arial';
+  src:url('/src/assets/fonts/bpg-arial-webfont.ttf')
+}

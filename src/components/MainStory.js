@@ -10,11 +10,11 @@ const MainStory = () => {
     const [pageVisible, setpageVisible]=useState(false)
     const [searchVisible, setsearchVisible]=useState(false)
     const switchVisibility = ()=> {
-    return (setpageVisible(!pageVisible))
+    return (setpageVisible(!pageVisible), setsearchVisible(false))
 
     }
     const searchVisibility = ()=> {
-        return (setsearchVisible(!searchVisible))
+        return (setsearchVisible(!searchVisible), setpageVisible(false))
     
         }
 
@@ -24,7 +24,7 @@ const MainStory = () => {
             <MenuBar visibility={switchVisibility} searchvisibility={searchVisibility}/>
             <MenuPage visible={pageVisible}/>
             <BottomMenu color={pageVisible} visible={pageVisible}/>
-            <Search visible={searchVisible}/>
+            <Search visible={searchVisible} searchvisibility={searchVisibility}/>
 
             
         </div>
