@@ -26,6 +26,9 @@
         font-family: 'bpg_nino';
         width: 100%;
     }
+    .input:focus {
+        outline: none;
+    }
     .cross {
         display: inline-block;
         position: relative;
@@ -37,10 +40,12 @@
 .cross a {
     color: #1c1c1c;
     text-decoration: none;
+    width: 20%;
 }
 
     .form {
         display: inline-block;
+        width: 100%;
         
     }
     .line {

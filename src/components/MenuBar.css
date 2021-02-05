@@ -80,7 +80,7 @@ transition: 0.5s;
   border-color:rgb(185, 180, 180);
   border-style: solid;
   border-width: 2px;
-  border-radius: 2px;
+  border-radius: 5px;
   text-align: center;
   line-height: 49px;
   position: relative;

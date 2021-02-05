@@ -1,4 +1,13 @@
 .stories {
- background-color: #1c1c1c;   
+ background-color: #1c1c1c;  
+ position: relative;
+ margin-left: 50vw;
+ right: 0;
 
 }
+
+@media screen and (max-width: 992px) {
+    .stories {
+      
+    }
+  }
