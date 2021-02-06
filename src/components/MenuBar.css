@@ -92,6 +92,16 @@ transition: 0.5s;
     color: #1c1c1c;
     
   }
+
+  @media screen and (max-width: 1500px) {
+    #root > div > div > div.col-lg-6.mainstory > div.menubar > ul > li:nth-child(1){
+      display: none;
+    }
+    #root > div > div > div.col-lg-6.mainstory > div.menubar > ul > li:nth-child(2) {
+      display: none;
+    }
+
+  }
   
   
   
