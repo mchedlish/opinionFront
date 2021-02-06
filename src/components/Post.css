@@ -1,8 +1,46 @@
 .post {
-    
-   
-    width: 40%;
+width: 50%;
+display: inline-block;
+padding: 30px;
+
 }
+
+
 .category {
-    color:white
+color:white;
+display: inline-block;
+font-family: 'bpg_nino';
+margin-top: 30px;
+    
+}
+.headline {
+    color: white;
+    width: 100%;
+    display: inline-block;
+    word-wrap:break-word;
+    font-family: 'bpg_nino_bold';
+    font-size: 24px;
+   }
+
+.excerpt {
+    color:grey;
+    word-wrap:break-word;
+    font-family:'bpg_arial';
+    font-size:18px;
+    text-decoration: none;
+
+}
+.clock {
+height: 20px;
+margin-top: -8px;
+    }
+.minutes {
+    color: white;
+    margin-left: 10px;
+    font-size: 18px;
+}
+.reading {
+    color: white;
+    font-family: 'bpg_nino';
+    text-decoration: none;
 }
