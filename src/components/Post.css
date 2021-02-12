@@ -44,3 +44,15 @@ margin-top: -8px;
     font-family: 'bpg_nino';
     text-decoration: none;
 }
+
+@media screen and (max-width: 1200px) and (min-width:992px) {
+.post {
+    width: 100%;
+}
+}
+@media screen and (max-width: 700px) {
+    .post {
+        width: 100%;
+    }
+
+}

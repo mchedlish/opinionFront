@@ -14,7 +14,7 @@ const styles = {
     }
 
     return (
-        <div className='post'>
+        <div className='post col-md-12'>
         <Link style={{textDecoration:'none'}}>
             <div className='image'>
             <img src={SomeImage} style={styles}/>
