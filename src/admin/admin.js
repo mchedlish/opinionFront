@@ -15,6 +15,12 @@ const admin = () => {
                                         Create Category
                                     </Link>
                                 </li>
+                                <li className="list-group-item">
+                                <Link to="/admin/crud/blog">
+                                    Create Blog
+                                </Link>
+                            </li>
+
                             </ul>
                         </div>
                         <div className="col-md-8">right</div>

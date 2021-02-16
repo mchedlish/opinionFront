@@ -5,6 +5,7 @@ import App from './App';
 import SignUp from '../src/components/auth/SignUpComponent'
 import Admin from '../src/admin/admin'
 import CategoryTag from '../src/admin/crud/category-tag'
+import BlogCreate from '../src/admin/crud/blog'
 import User from '../src/user/index'
 import reportWebVitals from './reportWebVitals';
 import SignIn from '../src/components/auth/SignInComponent.js'
@@ -21,6 +22,7 @@ ReactDOM.render(
   <Route exact path='/admin' component={Admin}/>
   <Route exact path='/user' component={User}/>
   <Route exact path='/admin/crud/category-tag' component={CategoryTag}/>
+  <Route exact path='/admin/crud/blog' component={BlogCreate}/>
   </Switch>
   
   

@@ -1,6 +1,6 @@
 import React from 'react';
 import Category from '../../components/crud/Category'
-
+import Tag from '../../components/crud/Tag'
 
 const CategoryTag = () => {
     return (
@@ -14,6 +14,7 @@ const CategoryTag = () => {
                         </div>
                         <div className="col-md-6">
                             <p>tag</p>
+                            <Tag/>
                         </div>
                     </div>
                 </div>
