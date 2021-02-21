@@ -6,6 +6,7 @@ import {getTags} from '../../actions/tag'
 import {createBlog} from '../../actions/blog'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; 
+import './BlogCreate.css'
 
 const CreateBlog = (props) => {
     const blogFromLS = () => {
@@ -152,6 +153,18 @@ const CreateBlog = (props) => {
         );
     };
 
+    const showError = () => (
+        <div className="alert alert-danger" style={{ display: error ? '' : 'none' }}>
+            {error}
+        </div>
+    );
+
+    const showSuccess = () => (
+        <div className="alert alert-success" style={{ display: success ? '' : 'none' }}>
+            {success}
+        </div>
+    );
+
     const createBlogForm = () => {
         return (
             <form onSubmit={publishBlog}>
@@ -184,14 +197,11 @@ const CreateBlog = (props) => {
             <div className="row">
                 <div className="col-md-8">
                     {createBlogForm()}
-                    <hr />
-                    {JSON.stringify(title)}
-                    <hr />
-                    {JSON.stringify(body)}
-                    <hr />
-                    {JSON.stringify(categories)}
-                    <hr />
-                    {JSON.stringify(tags)}
+                    <div className="pt-3">
+                    {showError()}
+                    {showSuccess()}
+                </div>
+                   
                 </div>
 
                 <div className="col-md-4">
