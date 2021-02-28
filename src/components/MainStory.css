@@ -1,5 +1,5 @@
 .mainstory {
-    background-image: url('../assets/images/mainimage.jpg');
+    background-image: url('../assets/images/tbilisi.jpg');
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,5 +12,20 @@
         .mainstory {
           position: relative;
           width: 100%;
+          
         }
+      }
+      .mainheadline {
+
+        position: absolute;
+        display: inline-block;
+        color: white;
+        margin-top: 400px;
+        margin-left: 40px;
+        width: 85%;
+        font-size: 46px;
+        font-family: 'bpg_nino_bold';
+        word-wrap: break-word;
+        transition: 0.7s;
+
       }

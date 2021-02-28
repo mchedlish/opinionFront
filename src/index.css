@@ -1,5 +1,6 @@
 .row {
   height: 100vh;
+  overflow-x: hidden;
 }
 @font-face {
   font-family: 'bpg_nino';

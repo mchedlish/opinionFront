@@ -1,5 +1,7 @@
 import fetch from 'isomorphic-fetch';
 
+
+
 export const createBlog = (blog, token) => {
     return fetch(`http://localhost:8000/api/blog`, {
         method: 'POST',
@@ -27,3 +29,19 @@ export const listBlogsWithCategoriesAndTags = () => {
         })
         .catch(err => console.log(err));
 };
+
+export const singleBlog = (slug, props) => {
+    
+    
+    return fetch(`http://localhost:8000/api/blog/${slug}`, {
+        method: 'GET'
+    })
+        .then(response => {
+            
+            return response.json()
+})
+
+
+
+.catch(err => console.log(err));
+            }
