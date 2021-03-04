@@ -16,14 +16,14 @@ ReactDOM.render(
 
   <BrowserRouter>
   <Switch>
-  <Route exact path='/' component={App}/>
-  <Route exact path='/:slug' component={App}/>
-  <Route exact path='/signup' component={SignUp}/>
   <Route exact path='/signin' component={SignIn}/>
   <Route exact path='/admin' component={Admin}/>
+  <Route exact path='/:slug' component={App}/>
+  <Route exact path='/signup' component={SignUp}/>
   <Route exact path='/user' component={User}/>
   <Route exact path='/admin/crud/category-tag' component={CategoryTag}/>
   <Route exact path='/admin/crud/blog' component={BlogCreate}/>
+  <Route exact path='/' component={App}/>
   </Switch>
   
   

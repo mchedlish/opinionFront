@@ -7,15 +7,35 @@ import {Link, withRouter} from 'react-router-dom'
 import BackArrow from '../assets/icons/back-arrow.png'
 
 const Stories = (props) => {
-const [allBlogs, setallBlogs]=useState(null)
+const [allBlogs, setallBlogs]=useState([])
 const [blog, setBlog]=useState(null)
+const [limit, setLimit]=useState(2)
+const [skip, setSkip]=useState(0)
+const [loadedBlogs, setLoadedBlogs]=useState([])
 let [color, setColor] = useState("#ffffff");
 
+
 useEffect(() => {
-    listBlogsWithCategoriesAndTags()
+    listBlogsWithCategoriesAndTags(0,2)
     .then(data=>setallBlogs(data.blogs))
     .catch((err)=> console.log(err))
     }, [])
+   
+    const loadMore = () => {
+        let toSkip=skip+limit
+        console.log(toSkip)
+        
+        listBlogsWithCategoriesAndTags(toSkip, limit).then(data => {
+          if (data.error) {
+              
+          } else {
+            
+             setallBlogs([...allBlogs, ...data.blogs]);
+             setSkip(toSkip)
+              console.log(allBlogs)
+             }
+      });
+  };  
 
     const single =(photo)=>singleBlog(photo)
     .then(data=>setBlog(prevState=>data))
@@ -52,11 +72,13 @@ return (
         </div>     
       
       
-        {allBlogs? posts().reverse():null}
+      {allBlogs?posts():null}
       
        </div>
+
+       <div className='butn col-lg-12'><button onClick={loadMore}>{allBlogs?'მეტი ბლოგი...':null}</button></div>
        <div className="sweet-loading">
-        <RingLoader color={color} loading={!allBlogs}  size={150} />
+        <RingLoader color={color} loading={allBlogs.length===0}  size={150} />
       </div>
        </div>
     );

@@ -17,7 +17,7 @@ const MainStory = () => {
 
     useEffect(() => {
         listBlogsWithCategoriesAndTags()
-        .then(data=>setallBlogs(prevState=>prevState.concat(data.blogs[data.blogs.length-1].title)))
+        .then(data=>setallBlogs(prevState=>prevState.concat(data.blogs[0].title)))
         .catch((err)=> console.log(err))     
         }, [])
 

@@ -71,3 +71,25 @@
       word-wrap:break-word;
     }
 
+    .butn {
+      
+      text-align: center;
+      font-family: 'bpg_nino';
+    }
+    .butn button {
+      color: white;
+      background-color: #141414;
+      border:none;
+      height: 60px;
+      width: 93%;
+      transition: 0.4s;
+    
+    }
+    .butn button:hover {
+      background-color: #333335;
+      
+    }
+    .butn button:focus {
+      outline: none;
+    }
+  

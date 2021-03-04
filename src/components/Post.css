@@ -2,6 +2,7 @@
 width: 50%;
 display: inline-block;
 padding: 30px;
+transition: 0.5s;
 
 
 }
@@ -21,7 +22,14 @@ margin-top: 30px;
     word-wrap:break-word;
     font-family: 'bpg_nino_bold';
     font-size: 24px;
+    transition: 0.3s;
+    
    }
+   .headline:hover {
+       opacity: 0.6;
+   }
+
+  
 
 .excerpt {
     color:grey;
