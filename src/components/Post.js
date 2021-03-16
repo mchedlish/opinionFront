@@ -26,7 +26,7 @@ const styles = {
         
         <p className='category'>{category}</p>
         <p className='headline'>{title}</p>
-        <p className='excerpt' >{excerpt}</p>
+        <p className='excerpt' dangerouslySetInnerHTML={{__html:excerpt}}></p>
         <div className='reading'><span><img className='clock' src={Book}/><span className='minutes'></span></span> წაიკითხეთ მეტი...</div>
         </div>
         </Link>

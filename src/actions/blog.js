@@ -33,6 +33,7 @@ export const listBlogsWithCategoriesAndTags = (skip, limit) => {
         body: JSON.stringify(data)
     })
         .then(response => {
+            
             return response.json();
         })
         .catch(err => console.log(err));
@@ -53,3 +54,20 @@ export const singleBlog = (slug, props) => {
 
 .catch(err => console.log(err));
             }
+
+            export const listRelated = (related) => {
+                return fetch(`http://localhost:8000/api/blogs/${related}`, {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                  
+                    
+                })
+                    .then(response => {
+                        console.log(response)
+                        return response.json() 
+                    })
+                    .catch(err => console.log(err));
+            };         
