@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+//import fetch from 'isomorphic-fetch';
 
 
 
@@ -66,7 +66,7 @@ export const singleBlog = (slug, props) => {
                     
                 })
                     .then(response => {
-                        console.log(response)
+                        
                         return response.json() 
                     })
                     .catch(err => console.log(err));

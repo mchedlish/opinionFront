@@ -23,7 +23,7 @@ useEffect(() => {
     
     }, [])
 
-    useEffect(() => {
+    /* useEffect(() => {
       const post="603228f9d7e88e03325281ed"
       
       
@@ -32,8 +32,8 @@ useEffect(() => {
       .then(data=> console.log(data))
       .catch((err)=> console.log(err))
       
-      }, [])  
-      console.log(relatedBlogs)
+      }, [])   */
+     // console.log(relatedBlogs)
    
 
     const loadMore = () => {
