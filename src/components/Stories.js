@@ -5,10 +5,13 @@ import {listBlogsWithCategoriesAndTags, singleBlog, listRelated} from '../action
 import RingLoader from "react-spinners/RingLoader";
 import {Link, withRouter} from 'react-router-dom'
 import BackArrow from '../assets/icons/back-arrow.png'
+import { connect } from 'react-redux'
 
-
-const Stories = (props) => {
+const Stories = ({history, relatedPosts}) => {
+  
 const [allBlogs, setallBlogs]=useState([])
+
+//console.log(relatedPosts.relPosts)
 const [relatedBlogs, setRelatedBlogs]=useState([])
 const [blog, setBlog]=useState(null)
 const [limit, setLimit]=useState(2)
@@ -23,6 +26,15 @@ useEffect(() => {
     
     }, [])
 
+   useEffect(() => {
+    setRelatedBlogs(relatedPosts)
+   
+   }, [relatedPosts])
+
+console.log(relatedBlogs.relPosts, 'ნიკო')
+
+
+
     /* useEffect(() => {
       const post="603228f9d7e88e03325281ed"
       
@@ -33,8 +45,7 @@ useEffect(() => {
       .catch((err)=> console.log(err))
       
       }, [])   */
-     // console.log(relatedBlogs)
-   
+    
 
     const loadMore = () => {
         let toSkip=skip+limit
@@ -44,7 +55,7 @@ useEffect(() => {
           } else {
             
              setallBlogs([...allBlogs, ...data.blogs]);
-             console.log(data.size)
+             //console.log(data.size)
              setSkip(toSkip)
               
              }
@@ -62,23 +73,24 @@ const posts = ()=>allBlogs.map(post=><Post
     photo={post.slug}
     singleBlog={single}
     scroll={executeScroll}
-    direct={()=>props.history.push(post.slug)}
+    direct={()=>history.push(post.slug)}
    />)  
 
-   const relatedPosts = ()=>relatedBlogs.map(post=><Post 
+   const relPosts = ()=>relatedBlogs.relPosts.map(post=><Post 
     category={post.categories[0].name}
     title={post.title}
     excerpt={post.excerpt}
-    photo={post.slug}
+   photo={post.slug}
     singleBlog={single}
     scroll={executeScroll}
-    direct={()=>props.history.push(post.slug)}
+    direct={()=>history.push(post.slug)}
    />)  
-
+   
+   
    const myRef = useRef(null)
    const executeScroll = () => myRef.current.scrollIntoView({behavior:'smooth', block:'end'})       
     
-  let pagePath=props.history.location.pathname
+  let pagePath=history.location.pathname
     
 
 return (
@@ -95,10 +107,12 @@ return (
         </div>     
       
       
-      {allBlogs?posts():null}
-      {relatedBlogs?relatedPosts():null}
+      {(allBlogs&&(!relatedBlogs.relPosts))?posts():null}
+      {relatedBlogs.relPosts?relPosts():null}
+     
+     
        </div>
-
+       
        <div className='butn col-lg-12'><button onClick={loadMore}>{allBlogs?'მეტი ბლოგი...':null}</button></div>
        <div className="sweet-loading">
         <RingLoader color={color} loading={allBlogs.length===0}  size={150} />
@@ -106,6 +120,10 @@ return (
        </div>
     );
 };
+const mapStateToProps = state => {
+  return {
+    relatedPosts: state
+  }
+}
 
-
-export default withRouter(Stories);
+export default connect(mapStateToProps)(withRouter(Stories));

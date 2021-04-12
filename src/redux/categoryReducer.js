@@ -2,7 +2,7 @@ import {listRelated} from '../actions/blog'
 const SHOW_CATEGORY='SHOW_CATEGORY'
 const initialState = {
   loading: false,
-  relatedPosts: [],
+  relPosts: [],
   error: ''
 }
 
@@ -26,12 +26,34 @@ const categoryReducer = (state={initialState}, action) => {
       case "FETCH_CATEGORY":
       return {...state, loading:true}
       
-      case "FETCH_SUCCESS":
+     
+      case "FETCH_POLITICS":
         return {
           loading: false,
-          relatedPosts: action.payload,
+          relPosts: action.payload,
           error: ''
         }
+        
+        case "FETCH_WORLD":
+          return {
+            loading: false,
+            relPosts: action.payload,
+            error: ''
+          }
+
+case "FETCH_TECHNOLOGIES":
+          return {
+            loading: false,
+            relPosts: action.payload,
+            error: ''
+          }
+          case "FETCH_TRENDS":
+            return {
+              loading: false,
+              relPosts: action.payload,
+              error: ''
+            }
+    
         case "FETCH_FAILURE":
           return {
             loading: false,
