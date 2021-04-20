@@ -46,7 +46,7 @@ export const singleBlog = (slug, props) => {
         method: 'GET'
     })
         .then(response => {
-            
+           
             return response.json()
 })
 

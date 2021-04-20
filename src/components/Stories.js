@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import '../components/Stories.css'
 import Post from './Post'
-import {listBlogsWithCategoriesAndTags, singleBlog, listRelated} from '../actions/blog'
+import {listBlogsWithCategoriesAndTags, singleBlog} from '../actions/blog'
 import RingLoader from "react-spinners/RingLoader";
 import {Link, withRouter} from 'react-router-dom'
 import BackArrow from '../assets/icons/back-arrow.png'
@@ -13,7 +13,7 @@ const [allBlogs, setallBlogs]=useState([])
 
 //console.log(relatedPosts.relPosts)
 const [relatedBlogs, setRelatedBlogs]=useState([])
-const [blog, setBlog]=useState(null)
+const [blog, setBlog]=useState([])
 const [limit, setLimit]=useState(2)
 const [skip, setSkip]=useState(0)
 let [color, setColor] = useState("#ffffff");
@@ -30,24 +30,9 @@ useEffect(() => {
     setRelatedBlogs(relatedPosts)
    
    }, [relatedPosts])
+   console.log(blog)
 
-console.log(relatedBlogs.relPosts, 'ნიკო')
-
-
-
-    /* useEffect(() => {
-      const post="603228f9d7e88e03325281ed"
-      
-      
-      listRelated(post)
-      .then(data=>setRelatedBlogs(data))
-      .then(data=> console.log(data))
-      .catch((err)=> console.log(err))
-      
-      }, [])   */
-    
-
-    const loadMore = () => {
+const loadMore = () => {
         let toSkip=skip+limit
         listBlogsWithCategoriesAndTags(toSkip, limit).then(data => {
           if (data.error) {
@@ -63,7 +48,8 @@ console.log(relatedBlogs.relPosts, 'ნიკო')
   };  
 
     const single =(photo)=>singleBlog(photo)
-    .then(data=>setBlog(prevState=>data))
+    .then(data=>setBlog(data))
+    .then(data=>console.log(data))
     .catch((err)=> console.log(err))
 
 const posts = ()=>allBlogs.map(post=><Post 
@@ -74,16 +60,19 @@ const posts = ()=>allBlogs.map(post=><Post
     singleBlog={single}
     scroll={executeScroll}
     direct={()=>history.push(post.slug)}
+    
    />)  
 
    const relPosts = ()=>relatedBlogs.relPosts.map(post=><Post 
     category={post.categories[0].name}
     title={post.title}
     excerpt={post.excerpt}
-   photo={post.slug}
+    photo={post.slug}
     singleBlog={single}
     scroll={executeScroll}
-    direct={()=>history.push(post.slug)}
+    direct={()=>history.push(post.slug)
+    
+    }
    />)  
    
    
@@ -98,11 +87,11 @@ return (
         <div className='col-lg-12'>
         <div className='singlestory'>
         <Link to='/' style={{color:'white', textDecoration:"none"}} >
-        <h6 ref={myRef} style={pagePath==='/'? {display:'none'}:{display:'block'}} ><img className='backarrow' src={BackArrow}/>უკან დაბრუნება</h6>
+        <h6 ref={myRef} style={(pagePath==='/'||pagePath.includes('search'))? {display:'none'}:{display:'block'}} ><img className='backarrow' src={BackArrow}/>უკან დაბრუნება</h6>
         </Link>
         <h6 className='author'><span>ავტორი: </span>ნიკოლოზ მჭედლიშვილი</h6>
-        <p className='singleheadline' style={pagePath==='/'? {display:'none'}:{display:'block'}}>{blog?blog.title:null}</p>
-        <p className='singlebody'  style={pagePath==='/'? {display:'none'}:{display:'block'}} dangerouslySetInnerHTML={{ __html: blog?blog.body:null }} ></p>
+        <p className='singleheadline' style={(pagePath==='/'||pagePath.includes('-search'))? {display:'none'}:{display:'block'}}>{blog?blog.title:null}</p>
+        <p className='singlebody'  style={(pagePath==='/'||pagePath.includes('-search'))? {display:'none'}:{display:'block'}} dangerouslySetInnerHTML={{ __html: blog?blog.body:null }} ></p>
 
         </div>     
       
