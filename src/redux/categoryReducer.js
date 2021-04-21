@@ -31,27 +31,38 @@ const categoryReducer = (state={initialState}, action) => {
         return {
           loading: false,
           relPosts: action.payload,
-          error: ''
+          error: '',
+          path:'politics'
         }
+        case "FETCH_ECONOMICS":
+          return {
+            loading: false,
+            relPosts: action.payload,
+            error: '',
+            path:'economics'
+          }
         
         case "FETCH_WORLD":
           return {
             loading: false,
             relPosts: action.payload,
-            error: ''
+            error: '',
+            path:'world'
           }
 
 case "FETCH_TECHNOLOGIES":
           return {
             loading: false,
             relPosts: action.payload,
-            error: ''
+            error: '',
+            path:'technologies'
           }
           case "FETCH_TRENDS":
             return {
               loading: false,
               relPosts: action.payload,
-              error: ''
+              error: '',
+              path:'trends'
             }
     
         case "FETCH_FAILURE":

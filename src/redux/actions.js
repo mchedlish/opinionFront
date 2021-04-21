@@ -56,7 +56,7 @@ import axios from 'axios'
        axios
          .post(`http://localhost:8000/api/blogs/${economics}`)
          .then(response => {
-           console.log(response.data)
+          
            const posts = response.data
            
            dispatch(fetchSuccess(posts))
@@ -75,7 +75,7 @@ import axios from 'axios'
        axios
          .post(`http://localhost:8000/api/blogs/${world}`)
          .then(response => {
-           console.log(response.data)
+        
            const posts = response.data
            
            dispatch(fetchSuccess(posts))

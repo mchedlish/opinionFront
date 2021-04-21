@@ -27,11 +27,12 @@ useEffect(() => {
     }, [])
 
    useEffect(() => {
+    
     setRelatedBlogs(relatedPosts)
    
    }, [relatedPosts])
-   console.log(blog)
-
+   
+  
 const loadMore = () => {
         let toSkip=skip+limit
         listBlogsWithCategoriesAndTags(toSkip, limit).then(data => {
@@ -49,7 +50,7 @@ const loadMore = () => {
 
     const single =(photo)=>singleBlog(photo)
     .then(data=>setBlog(data))
-    .then(data=>console.log(data))
+    
     .catch((err)=> console.log(err))
 
 const posts = ()=>allBlogs.map(post=><Post 
@@ -95,11 +96,11 @@ return (
 
         </div>     
       
-      
-      {(allBlogs&&(!relatedBlogs.relPosts))?posts():null}
-      {relatedBlogs.relPosts?relPosts():null}
      
-     
+      {(allBlogs&&(!relatedBlogs.relPosts)||(pagePath==='/'))?posts():null}
+      {(relatedBlogs.relPosts&&pagePath.includes('related'))?relPosts():null}
+   
+    
        </div>
        
        <div className='butn col-lg-12'><button onClick={loadMore}>{allBlogs?'მეტი ბლოგი...':null}</button></div>
