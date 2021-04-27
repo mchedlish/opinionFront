@@ -35,7 +35,7 @@ import axios from 'axios'
     
       dispatch(fetchCategory())
       axios
-        .post(`http://opinion.institute/api/blogs/${politics}`)
+        .post(`http://localhost:8000/api/blogs/${politics}`)
         .then(response => {
           console.log(response.data)
           const posts = response.data
@@ -54,7 +54,7 @@ import axios from 'axios'
      
        dispatch(fetchCategory())
        axios
-         .post(`http://opinion.institute/api/blogs/${economics}`)
+         .post(`http://localhost:8000/api/blogs/${economics}`)
          .then(response => {
           
            const posts = response.data
@@ -68,12 +68,15 @@ import axios from 'axios'
      }
    }
 
+
+
+
    export const fetchWorld = () => {
     return (dispatch) => {
      
        dispatch(fetchCategory())
        axios
-         .post(`http://opinion.institute/api/blogs/${world}`)
+         .post(`http://localhost:8000/api/blogs/${world}`)
          .then(response => {
         
            const posts = response.data
@@ -92,7 +95,7 @@ import axios from 'axios'
      
        dispatch(fetchCategory())
        axios
-         .post(`http://opinion.institute/api/blogs/${technologies}`)
+         .post(`http://localhost:8000/api/blogs/${technologies}`)
          .then(response => {
            console.log(response.data)
            const posts = response.data
@@ -110,7 +113,7 @@ import axios from 'axios'
      
        dispatch(fetchCategory())
        axios
-         .post(`http://opinion.institute/api/blogs/${trends}`)
+         .post(`http://localhost:8000/api/blogs/${trends}`)
          .then(response => {
            console.log(response.data)
            const posts = response.data

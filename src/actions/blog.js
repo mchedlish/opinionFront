@@ -3,7 +3,7 @@
 import queryString from 'query-string';
 
 export const createBlog = (blog, token) => {
-    return fetch(`http://opinion.institute/api/blog`, {
+    return fetch(`http://localhost:8000/api/blog`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -24,7 +24,7 @@ export const listBlogsWithCategoriesAndTags = (skip, limit) => {
         skip
     };
 
-    return fetch(`http://opinion.institute/api/blogs-categories-tags`, {
+    return fetch(`http://localhost:8000/api/blogs-categories-tags`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -42,7 +42,7 @@ export const listBlogsWithCategoriesAndTags = (skip, limit) => {
 export const singleBlog = (slug, props) => {
     
     
-    return fetch(`http://opinion.institute/api/blog/${slug}`, {
+    return fetch(`http://localhost:8000/api/blog/${slug}`, {
         method: 'GET'
     })
         .then(response => {
@@ -56,7 +56,7 @@ export const singleBlog = (slug, props) => {
             }
 
             export const listRelated = (related) => {
-                return fetch(`http://opinion.institute/api/blogs/${related}`, {
+                return fetch(`http://localhost:8000/api/blogs/${related}`, {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
@@ -76,7 +76,7 @@ export const singleBlog = (slug, props) => {
                 console.log('search params', search);
                 let query = JSON.stringify(search);
              //   console.log('query params', query);
-                return fetch(`http://opinion.institute/api/blogs/search?${search}`, {
+                return fetch(`http://localhost:8000/api/blogs/search?${search}`, {
                     method: 'GET'
                 })
                     .then(response => {

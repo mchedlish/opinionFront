@@ -4,7 +4,7 @@ import Post from './Post'
 import {listBlogsWithCategoriesAndTags, singleBlog} from '../actions/blog'
 import RingLoader from "react-spinners/RingLoader";
 import {Link, withRouter} from 'react-router-dom'
-import BackArrow from '../assets/icons/back-arrow.png'
+import BackArrow from './../assets/icons/back-arrow.png'
 import { connect } from 'react-redux'
 
 const Stories = ({history, relatedPosts}) => {
