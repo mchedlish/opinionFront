@@ -4,10 +4,10 @@ import MenuBar from './MenuBar'
 import MenuPage from './MenuPage'
 import BottomMenu from './BottomMenu';
 import Search from './Search'
-import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import {listBlogsWithCategoriesAndTags} from '../actions/blog'
 
-const MainStory = () => {
+const MainStory = (props) => {
 
     const [pageVisible, setpageVisible]=useState(false)
     const [searchVisible, setsearchVisible]=useState(false)
@@ -35,13 +35,13 @@ const MainStory = () => {
         return (setsearchVisible(!searchVisible), setpageVisible(false))
     
         }
-
+let pagePath = props.history.location.pathname;
     return (
         <div className='col-lg-6 mainstory'>
-        <Link><p className="mainheadline">{pageVisible? "":allBlogs}</p></Link>
+        <p className="mainheadline" style={(pagePath.includes('searched-post')||pagePath!='/')?{display:'none'}:null}>{pageVisible? "":allBlogs}</p>
             <MenuBar visibility={switchVisibility} searchvisibility={searchVisibility}/>
             <MenuPage visible={pageVisible}/>
-            <BottomMenu color={pageVisible} visible={pageVisible}/>
+            <BottomMenu color={pageVisible} visible={pageVisible}  />
             <Search visible={searchVisible} searchvisibility={searchVisibility}/>
 
             
@@ -49,4 +49,4 @@ const MainStory = () => {
     );
 };
 
-export default MainStory;
+export default withRouter(MainStory);

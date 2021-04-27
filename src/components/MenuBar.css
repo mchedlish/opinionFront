@@ -26,7 +26,7 @@
 display: inline-block;
 }
 
-  .listitems li:nth-child(1) img{
+.listitems li:nth-child(1) img{
 height: 28px;
 margin-top: -9px;
 transition: 0.5s;
