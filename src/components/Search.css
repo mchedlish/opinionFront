@@ -6,6 +6,7 @@
     position: relative;
     transition: 1s;
     
+    
      }
 
     .searchInput {
@@ -55,4 +56,9 @@
         margin-top: -240px;
         border-bottom: solid #1c1c1c 1px;
         
+    }
+    form button {
+        margin-bottom: 60px;
+        border-radius: 5px;
+        width: 140px;
     }

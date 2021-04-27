@@ -14,13 +14,13 @@ const [allBlogs, setallBlogs]=useState([])
 //console.log(relatedPosts.relPosts)
 const [relatedBlogs, setRelatedBlogs]=useState([])
 const [blog, setBlog]=useState([])
-const [limit, setLimit]=useState(2)
+const [limit, setLimit]=useState(4)
 const [skip, setSkip]=useState(0)
 let [color, setColor] = useState("#ffffff");
 
 
 useEffect(() => {
-    listBlogsWithCategoriesAndTags(0,2)
+    listBlogsWithCategoriesAndTags(0,4)
     .then(data=>setallBlogs(data.blogs))
     .catch((err)=> console.log(err))
     
@@ -91,8 +91,8 @@ return (
         <h6 ref={myRef} style={(pagePath==='/'||pagePath.includes('search'))? {display:'none'}:{display:'block'}} ><img className='backarrow' src={BackArrow}/>უკან დაბრუნება</h6>
         </Link>
         <h6 className='author'><span>ავტორი: </span>ნიკოლოზ მჭედლიშვილი</h6>
-        <p className='singleheadline' style={(pagePath==='/'||pagePath.includes('-search'))? {display:'none'}:{display:'block'}}>{blog?blog.title:null}</p>
-        <p className='singlebody'  style={(pagePath==='/'||pagePath.includes('-search'))? {display:'none'}:{display:'block'}} dangerouslySetInnerHTML={{ __html: blog?blog.body:null }} ></p>
+        <p className='singleheadline' style={(pagePath==='/'||pagePath.includes('related')||pagePath.includes('-search'))? {display:'none'}:{display:'block'}}>{blog?blog.title:null}</p>
+        <p className='singlebody'  style={(pagePath==='/'||pagePath.includes('related'))? {display:'none'}:{display:'block'}} dangerouslySetInnerHTML={{ __html: blog?blog.body:null }} ></p>
 
         </div>     
       
@@ -103,7 +103,7 @@ return (
     
        </div>
        
-       <div className='butn col-lg-12'><button onClick={loadMore}>{allBlogs?'მეტი ბლოგი...':null}</button></div>
+       <div className='butn col-lg-12' style={pagePath!='/'? {display:'none'}:null}><button onClick={loadMore}>{allBlogs?'მეტი ბლოგი...':null}</button></div>
        <div className="sweet-loading">
         <RingLoader color={color} loading={allBlogs.length===0}  size={150} />
       </div>

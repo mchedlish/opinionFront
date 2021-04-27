@@ -48,15 +48,16 @@ setValues ({search: e.target.value})
     }
 
     let pagePath=props.history.location.pathname
+    const pushing = ()=>props.history.push('searched-posts')
    
     return (
-        <div className='searchpage row' style={{opacity:props.visible? "0.8":'0'}}>
+        <div className='searchpage row' style={{opacity:props.visible? "0.7":'0'}}>
             <div className='col-lg-6 searchInput'>
            <form className='form' onSubmit={searchSubmit}>
            <input type='text' value={values.search} className='input' onChange={handleChange}>
            
            </input>
-           <button type='submit' className='searchButton'>ძებნა</button>
+           <button type='submit' className='searchButton' onClick={pushing}>ძებნა</button>
            </form>
             <div className="cross" onClick={props.searchvisibility}><a href='/'>X</a></div>
             </div>

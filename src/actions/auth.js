@@ -4,7 +4,7 @@ import cookie from 'js-cookie';
 
 export const signup = user => {
    
-    return fetch(`http://localhost:8000/api/signup`, {
+    return fetch(`http://opinion.institute/api/signup`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -19,7 +19,7 @@ export const signup = user => {
 };
 
 export const signin = user => {
-    return fetch(`http://localhost:8000/api/signin`, {
+    return fetch(`http://opinion.institute/api/signin`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -38,7 +38,7 @@ export const signout = next => {
     removeLocalStorage('user');
     next();
 
-    return fetch(`http://localhost:8000/api/signout`, {
+    return fetch(`http://opinion.institute/api/signout`, {
         method: 'GET'
     })
         .then(response => {

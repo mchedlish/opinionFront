@@ -5,6 +5,8 @@ padding: 30px;
 transition: 0.5s;
 
 
+
+
 }
 
 
@@ -21,8 +23,9 @@ margin-top: 30px;
     display: inline-block;
     word-wrap:break-word;
     font-family: 'bpg_nino_bold';
-    font-size: 24px;
+    font-size: 22px;
     transition: 0.3s;
+    min-height: 95px;
     
    }
    .headline:hover {
@@ -37,6 +40,7 @@ margin-top: 30px;
     font-family:'bpg_arial';
     font-size:18px;
     text-decoration: none;
+    min-height: 140px;
 
 }
 .clock {

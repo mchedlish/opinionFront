@@ -12,8 +12,8 @@
         .mainstory {
           position: relative;
           width: 100%;
-          
-        }
+          }
+        
       }
       .mainheadline {
 
@@ -23,7 +23,7 @@
         margin-top: 400px;
         margin-left: 40px;
         width: 85%;
-        font-size: 46px;
+        font-size: 32px;
         font-family: 'bpg_nino_bold';
         word-wrap: break-word;
         transition: 0.7s;
