@@ -2,14 +2,15 @@
     z-index: 2;
     position: absolute;
     margin-top: -150px;
-    margin-left: -7px;
+    margin-left: -12px;
 
 }
 
 .bottommenu li {
     display: inline-block;
-    font-size: 22px;
+    font-size: 18px;
     font-family: 'bpg_nino_bold';
     margin-left: 20px;
+    line-height: 2;
 }
 

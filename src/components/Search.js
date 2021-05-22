@@ -4,6 +4,7 @@ import {listSearch} from '../actions/blog'
 import {Link, withRouter} from 'react-router-dom'
 import Post from './Post'
 import {singleBlog} from '../actions/blog'
+import { set } from 'js-cookie';
 
 const Search = (props) => {
     const [values, setValues] = useState({
@@ -46,7 +47,9 @@ const Search = (props) => {
 setValues ({search: e.target.value})
 
     }
-
+const emptyValues = ()=>{
+    setValues({search:''})
+}
     let pagePath=props.history.location.pathname
     const pushing = ()=>props.history.push('searched-posts')
    
@@ -54,7 +57,7 @@ setValues ({search: e.target.value})
         <div className='searchpage row' style={{opacity:props.visible? "0.7":'0'}}>
             <div className='col-lg-6 searchInput'>
            <form className='form' onSubmit={searchSubmit}>
-           <input type='text' value={values.search} className='input' onChange={handleChange}>
+           <input type='text' value={values.search} className='input' onChange={handleChange} onFocus={emptyValues}>
            
            </input>
            <button type='submit' className='searchButton' onClick={pushing}>ძებნა</button>

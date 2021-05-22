@@ -6,7 +6,7 @@ import BottomMenu from './BottomMenu';
 import Search from './Search'
 import {withRouter} from 'react-router-dom'
 import {listBlogsWithCategoriesAndTags} from '../actions/blog'
-
+import {tbilisi} from '../assets/images/tbilisi'
 const MainStory = (props) => {
 
     const [pageVisible, setpageVisible]=useState(false)
@@ -36,8 +36,10 @@ const MainStory = (props) => {
     
         }
 let pagePath = props.history.location.pathname;
+
     return (
-        <div className='col-lg-6 mainstory'>
+        <div className='col-lg-6 mainstory' style={{backgroundImage: `url("${tbilisi}")`}}>
+       
         <p className="mainheadline" style={(pagePath.includes('searched-post')||pagePath!='/')?{display:'none'}:null}>{pageVisible? "":allBlogs}</p>
             <MenuBar visibility={switchVisibility} searchvisibility={searchVisibility}/>
             <MenuPage visible={pageVisible}/>

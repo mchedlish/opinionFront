@@ -1,6 +1,6 @@
 .searchpage {
-    margin-top: -100vh;
-    height: 100vh;
+    margin-top: -105vh;
+    height: 105vh;
     z-index: -1;
     background-color: white;
     position: relative;
@@ -34,6 +34,7 @@
         display: inline-block;
         position: relative;
         font-size: 34px;
+        margin-top: -3px;
         
         
 }
@@ -54,7 +55,7 @@
         width: 70%;
         margin: auto;
         margin-top: -240px;
-        border-bottom: solid #1c1c1c 1px;
+       
         
     }
     form button {
@@ -62,3 +63,13 @@
         border-radius: 5px;
         width: 140px;
     }
+    @media screen and (max-width: 800px) and (min-width:400px) {
+      .searchpage {
+      height: 105vh;
+      margin-top: -105vh;
+}
+
+.searchInput {
+    margin-top: 200px;
+}
+        }

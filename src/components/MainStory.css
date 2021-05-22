@@ -1,11 +1,12 @@
 .mainstory {
-    background-image: url('../assets/images/tbilisi.jpg');
+   /* background-image: url('../assets/images/tbilisi.jpg'); */
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     filter:grayscale(0.5);
     position: fixed;
     width: 50vw;
+   
     }
 
     @media screen and (max-width: 992px) {
@@ -20,12 +21,20 @@
         position: absolute;
         display: inline-block;
         color: white;
-        margin-top: 400px;
+        margin-top: 360px;
         margin-left: 40px;
         width: 85%;
-        font-size: 32px;
+        font-size: 26px;
         font-family: 'bpg_nino_bold';
         word-wrap: break-word;
         transition: 0.7s;
+        
 
+      }
+
+      @media screen and (min-width:400px) and (max-width:800px) {
+        .mainheadline {
+          display: none;
+      
+        }
       }
